@@ -22,7 +22,7 @@ export function ClientRegister() {
   }
 
   return (
-    <div className="mt-20 flex flex-col items-center gap-4 mx-auto relative">
+    <div className="flex flex-col items-center gap-4 mx-auto relative">
       <div className="mx-auto relative grid grid-cols-3 gap-4 items-stretch w-[60%]">
         {clientform.map((Component, ind) => {
           const Elem = form_elem[Component];

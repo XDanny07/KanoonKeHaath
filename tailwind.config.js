@@ -5,4 +5,9 @@ export default {
     extend: {},
   },
   plugins: [],
+  module: {
+    prefix: "tw-",
+    important: true,
+    // ...
+  },
 };

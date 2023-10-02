@@ -1,0 +1,10 @@
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+/* " > * " applies style to childs individually instead of directly applying it to parent */
+.popupison > * {
+  filter: blur(2px);
+  pointer-events: none;
+}
