@@ -7,7 +7,7 @@ function LSPRegister() {
     <div className="w-full p-4 bg-white">
       <form className="w-full p-8 mx-auto shadow-[1px_1px_5px_rgb(0,0,0,0.2)] bg-white">
         <div className="mb-4 flex flex-col gap-6">
-          <div className="relative h-10 w-72 min-w-[200px]">
+          <div className="relative h-10 w-72">
             <select
               onChange={(e) => {
                 setselected_prog(e.target.value);

@@ -11,7 +11,7 @@ function Navbar(props) {
   const [regpop, setregpop] = useState(false);
   return (
     <>
-      <nav className="max-w-[100%] mb-4 flex justify-between p-6 items-center border border-neutral-500 shadow-md bg-blue-400">
+      <nav className="max-w-[100%] mb-4 flex flex-wrap justify-between p-6 items-center border border-neutral-500 shadow-md bg-blue-400">
         <NavLink to="/" className="text-3xl font-bold text-white">
           Kanoon Ke Haath {v}
         </NavLink>

@@ -1,6 +1,9 @@
 import { useEffect } from "react";
 import { CgCloseO } from "react-icons/cg";
 function Login(props) {
+  const ap = document.body.querySelector(".App");
+  ap.classList.add("popupison");
+
   function checkclick(e) {
     if (e.target.className == "App popupison") {
       ap.classList.remove("popupison");
@@ -11,9 +14,6 @@ function Login(props) {
   useEffect(() => {
     document.addEventListener("click", checkclick);
   }, []);
-
-  const ap = document.body.querySelector(".App");
-  ap.classList.add("popupison");
 
   return (
     <div className="filter-none pointer-events-auto z-10 absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] transition-all duration-500 ease-in-out">

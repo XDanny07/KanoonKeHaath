@@ -1,6 +1,8 @@
 import storage from "../../firebase";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
-function sendreg(props) {}
+function sendreg(props) {
+  console.log("Data sent : ", props);
+}
 export function File_upload(file, lspdata) {
   {
     const storageRef = ref(storage, `${file.name}`);

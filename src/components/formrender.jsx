@@ -47,40 +47,40 @@ function Formrender(props) {
           Documents Upload
         </NavLink>
       </div>
-      <div className="mx-auto relative grid grid-cols-3 gap-4 items-stretch w-[60%]">
+      <div className="mx-auto relative grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-4 items-stretch w-[60%]">
         {form[currsection].map((Component, ind) => {
           const Elem = form_elem[Component];
           return <Elem oninteraction={fieldinteracted} key={ind} />;
         })}
-        <div className="flex gap-2 col-start-3">
-          <button
-            onClick={(e) => {
+      </div>
+      <div className="w-[50%] flex flex-row flex-nowrap justify-end gap-2">
+        <button
+          onClick={(e) => {
+            e.preventDefault();
+            {
+              currsection == 0 ? null : setcurrsection(currsection - 1);
+            }
+          }}
+          className="px-2 py-3 text-center text-md border border-stone-700 rounded-md font-bold min-w-[25%] hover:scale-105 hover:border-blue-500 hover:shadow-[0px_1px_8px_black]"
+        >
+          Back
+        </button>
+        <button
+          onClick={async (e) => {
+            if (currsection == section - 1) {
               e.preventDefault();
-              {
-                currsection == 0 ? null : setcurrsection(currsection - 1);
-              }
-            }}
-            className="px-2 py-3 text-md border border-stone-700 rounded-md font-bold w-[50%] hover:scale-105 hover:border-blue-500 hover:shadow-[0px_1px_8px_black]"
-          >
-            Back
-          </button>
-          <button
-            onClick={async (e) => {
-              if (currsection == section - 1) {
-                e.preventDefault();
-                let url;
-                const tp = lspdata;
-                url = File_upload(lspdata["file"], lspdata);
-              } else {
-                e.preventDefault();
-                setcurrsection((currsection + 1) % section);
-              }
-            }}
-            className="px-2 py-3 text-md text-white bg-blue-500 border border-stone-700 rounded-md font-bold w-[50%] hover:scale-105 hover:shadow-[0px_1px_10px_skyblue]"
-          >
-            {currsection != section - 1 ? "Continue" : "Submit"}
-          </button>
-        </div>
+              let url;
+              const tp = lspdata;
+              url = File_upload(lspdata["file"], lspdata);
+            } else {
+              e.preventDefault();
+              setcurrsection((currsection + 1) % section);
+            }
+          }}
+          className="px-2 py-3 text-center text-md text-white bg-blue-500 border border-stone-700 rounded-md font-bold min-w-[25%] hover:scale-105 hover:shadow-[0px_1px_10px_skyblue]"
+        >
+          {currsection != section - 1 ? "Continue" : "Submit"}
+        </button>
       </div>
     </div>
   );
