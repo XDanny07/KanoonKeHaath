@@ -89,6 +89,9 @@ const Phone_no = (props) => (
       Contact No
     </label>
     <input
+      onKeyDown={(e) => {
+        // if (e.key < "0" || e.key > "9") e.preventDefault();
+      }}
       onBlur={(e) => {
         props.oninteraction(e);
       }}
@@ -104,7 +107,7 @@ const Phone_no = (props) => (
 
 const Gender_f = (props) => (
   <div className="relative">
-    <label className={select_label_style} htmlFor="grid-state">
+    <label className={select_label_style} htmlFor="reg-gender">
       Gender
     </label>
     <select
@@ -130,7 +133,9 @@ function State_City_f(props) {
   return (
     <>
       <div className="relative h-10">
-        <label className={select_label_style}>State</label>
+        <label htmlFor="reg-state" className={select_label_style}>
+          State
+        </label>
         <select
           onChange={(e) => {
             props.oninteraction(e);
@@ -153,9 +158,11 @@ function State_City_f(props) {
         </select>
       </div>
       <div className="relative h-max">
-        <label className={select_label_style}>City</label>
+        <label htmlFor="reg-city" className={select_label_style}>
+          City
+        </label>
         <select
-          onBlur={(e) => {
+          onChange={(e) => {
             props.oninteraction(e);
           }}
           className={select_style}

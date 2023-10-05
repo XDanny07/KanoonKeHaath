@@ -23,30 +23,30 @@ export function ClientRegister() {
 
   return (
     <div className="flex flex-col items-center gap-4 mx-auto relative">
-      <div className="mx-auto relative grid grid-cols-3 gap-4 items-stretch w-[60%]">
+      <div className="mx-auto relative grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-4 items-stretch w-[60%]">
         {clientform.map((Component, ind) => {
           const Elem = form_elem[Component];
           return <Elem oninteraction={fieldinteracted} key={ind} />;
         })}
-        <div className="flex gap-2 col-start-3">
-          <button
-            onClick={(e) => {
-              e.preventDefault();
-              navigate(-1);
-            }}
-            className="px-2 py-3 text-md border border-stone-700 rounded-md font-bold w-[50%] hover:scale-105 hover:border-blue-500 hover:shadow-[0px_1px_8px_black]"
-          >
-            Back
-          </button>
-          <button
-            onClick={(e) => {
-              e.preventDefault();
-            }}
-            className="px-2 py-3 text-md text-white bg-blue-500 border border-stone-700 rounded-md font-bold w-[50%] hover:scale-105 hover:shadow-[0px_1px_10px_skyblue]"
-          >
-            Submit
-          </button>
-        </div>
+      </div>
+      <div className="w-[50%] flex flex-row flex-nowrap justify-end gap-2">
+        <button
+          onClick={(e) => {
+            e.preventDefault();
+            navigate(-1);
+          }}
+          className="px-2 py-3 text-center text-md border border-stone-700 rounded-md font-bold min-w-[25%] hover:scale-105 hover:border-blue-500 hover:shadow-[0px_1px_8px_black]"
+        >
+          Back
+        </button>
+        <button
+          onClick={(e) => {
+            e.preventDefault();
+          }}
+          className="px-2 py-3 text-center text-md text-white bg-blue-500 border border-stone-700 rounded-md font-bold min-w-[25%] hover:scale-105 hover:shadow-[0px_1px_10px_skyblue]"
+        >
+          Submit
+        </button>
       </div>
     </div>
   );
