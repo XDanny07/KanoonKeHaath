@@ -1,6 +1,6 @@
 import { useState } from "react";
 import profession from "../data/Legal_Services";
-import Formrender from "./formrender";
+import LSPFormrender from "./unitcompnents/lspformrender";
 function LSPRegister() {
   const [selected_prof, setselected_prog] = useState("notselected");
   return (
@@ -33,7 +33,7 @@ function LSPRegister() {
         {selected_prof == "notselected" ? (
           <h1 className="text-center font-lg">Select Your Profession</h1>
         ) : (
-          <Formrender selected_prof={selected_prof.toLowerCase()} />
+          <LSPFormrender selected_prof={selected_prof.toLowerCase()} />
         )}
       </form>
     </div>
