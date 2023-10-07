@@ -1,7 +1,7 @@
 import mongoose, { Schema, Model } from "mongoose";
 
 const lawyerschema = new Schema({
-  kid: { type: Number, required: true, unique: true },
+  kid: { type: Number, unique: true },
   name: { type: String, required: true },
   dob: { type: Date },
   contact: { type: Number, required: true },

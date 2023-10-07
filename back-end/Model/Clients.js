@@ -1,7 +1,7 @@
 import mongoose, { Schema, Model } from "mongoose";
 
 const clientschema = new Schema({
-  kid: { type: Number, required: true, unique: true },
+  kid: { type: Number, unique: true },
   name: { type: String, required: true },
   dob: { type: Date },
   contact: { type: Number, required: true },
@@ -12,9 +12,9 @@ const clientschema = new Schema({
     addline2: String,
     state: { type: String, required: true },
     city: { type: String, required: true },
-    pincode: { type: String, required: true },
+    pincode: { type: Number, required: true },
   },
   aad: { type: Number, required: true },
 });
 
-const client = mongoose.model("client", clientschema);
+export const client = mongoose.model("client", clientschema);
