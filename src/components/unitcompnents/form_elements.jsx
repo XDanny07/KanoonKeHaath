@@ -216,6 +216,18 @@ function address_form(props) {
             required
           />
         </div>
+        <div className="relative h-11 ">
+          <label className={labelstyle}>Pin Code</label>
+          <input
+            onBlur={(e) => {
+              props.oninteraction(e);
+            }}
+            className={inputstyle}
+            placeholder=" "
+            id="reg-pin"
+            required
+          />
+        </div>
         <State_City_f oninteraction={props.oninteraction} />
       </div>
     </div>
@@ -246,7 +258,7 @@ const Area_Of_Expertise = (props) => (
 const file_upload = (props) => (
   <div className="relative">
     <label
-      class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+      className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
       htmlFor="file_input"
     >
       Upload file
@@ -285,7 +297,7 @@ const law_degree_uni = (props) => (
 );
 const aad = (props) => (
   <div className="relative">
-    <label htmlFor="reg-phone" className={labelstyle}>
+    <label htmlFor="reg-aad" className={labelstyle}>
       Aadhaar Number
     </label>
     <input
@@ -294,6 +306,40 @@ const aad = (props) => (
       }}
       id="reg-aad"
       type="text"
+      className={inputstyle}
+      placeholder=""
+      required
+    />
+  </div>
+);
+const email = (props) => (
+  <div className="relative">
+    <label htmlFor="reg-email" className={labelstyle}>
+      Email
+    </label>
+    <input
+      onBlur={(e) => {
+        props.oninteraction(e);
+      }}
+      id="reg-email"
+      type="email"
+      className={inputstyle}
+      placeholder=""
+      required
+    />
+  </div>
+);
+const eid = (props) => (
+  <div className="relative">
+    <label htmlFor="reg-eid" className={labelstyle}>
+      Enrollment ID
+    </label>
+    <input
+      onBlur={(e) => {
+        props.oninteraction(e);
+      }}
+      id="reg-eid"
+      type="number"
       className={inputstyle}
       placeholder=""
       pattern="[0-9]"
@@ -313,8 +359,10 @@ export const form_elem = [
   file_upload, //8
   law_degree_uni, //9
   aad, //10
+  email, //11
+  eid, //12 Enrollment ID For Lawyers
 ];
-const personal_info = [0, 1, 2, 3, 4, 5, 6];
-export const clientform = [0, 1, 2, 3, 4, 10, 5, 6];
-const lawyerform = [personal_info, [9], [8]];
+const personal_info = [0, 1, 2, 3, 4, 11, 10, 5, 6];
+export const clientform = [0, 1, 2, 3, 4, 11, 10, 5, 6];
+const lawyerform = [personal_info, [9, 12], [8]];
 export const allform = { lawyer: lawyerform };
