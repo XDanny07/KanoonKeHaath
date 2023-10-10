@@ -8,3 +8,7 @@
   filter: blur(2px);
   pointer-events: none;
 }
+
+.slidebgimg {
+  background-size: cover !important;
+}
